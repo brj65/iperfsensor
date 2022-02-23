@@ -12,7 +12,7 @@
 # "-r"   since we're expecting to parse results of a test in both directions 
 # "2>&1" redirect stderr to stdout to prevent errors from contaminating the xml output 
 # Warning: There is no input sanitization, so be mindful of what you pass in.
-output=$(iperf $* -f m -P 1 -r 2>&1) 
+output=$(iperf3 $* -f m -P 1  2>&1)
 error=$?
 
 # Parse iPerf output.  First find lines with the word MBytes, then (treating space as 
